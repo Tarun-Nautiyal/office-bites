@@ -359,10 +359,3 @@ office-food-delivery/
 | [prompt.md](./prompt.md) | Full enterprise product & technical specification |
 | [justification.md](./justification.md) | GPT vs Gemini response evaluation |
 
----
-
-<div align="center">
-
-**MIT License** · Built for office professionals
-
-</div>
