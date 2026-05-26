@@ -1,23 +1,3 @@
-GPTs response is better than Geminis.
-
-GPT does a job with storing cookies securely using `res.cookie("token" token, { httpOnly: true, secure: true })`.
-
-On the hand Gemini does not secure cookies at all. This is a must-have as per the prompt.
-
-GPT uses the names for environment variables in all its config and controller files.
-
-Gemini however uses `STRIPE_SECRET_KEY` in its.env file. Then calls it `process.env.STRIPE_SECRET_KEY || 'mock_key'` with a key as a backup.
-
-This could cause problems in production because it might send keys to the Stripe system without anyone noticing.
-
-There is another issue with Geminis Order schema. It has a TypeScript error.
-
-The error is that it says `type: number` of `type: Number`.
-
-This would stop the schema from working when its run. Theres no warning when its compiled.
-
-GPT also covers some extra things, like Firebase Cloud Messaging, Docker, Nginx and Redis caching.
-
-These were required for a production- output but Gemini leaves them out completely.
-
+GPTs response is better than Geminis.GPT does a job with storing cookies securely using `res.cookie("token" token, { httpOnly: true, secure: true })`.On the hand Gemini does not secure cookies at all. This is a must-have as per the prompt.
+GPT uses the names for environment variables in all its config and controller files.Gemini however uses `STRIPE_SECRET_KEY` in its.env file. Then calls it `process.env.STRIPE_SECRET_KEY || 'mock_key'` with a key as a backup.This could cause problems in production because it might send keys to the Stripe system without anyone noticing.There is another issue with Geminis Order schema. It has a TypeScript error.The error is that it says `type: number` of `type: Number`.This would stop the schema from working when its run. Theres no warning when its compiled.GPT also covers some extra things, like Firebase Cloud Messaging, Docker, Nginx and Redis caching.These were required for a production- output but Gemini leaves them out completely.
 This means Gemini fails to meet the prompts requirements.

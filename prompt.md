@@ -1,14 +1,14 @@
-# Enterprise Food Delivery Platform for Office Professionals
+# Food Delivery Platform for Office Employees
 
 ## Context and Role
 
-As a Full-Stack Developer specializing in scalable enterprise-grade web applications and immersive modern user experiences, you are responsible for designing and implementing a high-performance food delivery ecosystem tailored specifically for office employees and working professionals.
+As a Full-Stack Developer specializing in scalable enterprise level web applications and immersive modern user experiences, you are responsible for designing and implementing a high-performance food delivery ecosystem tailored specifically for office employees and working professionals.
 
 The platform must deliver a seamless corporate food ordering experience during peak office hours while maintaining production-level scalability, responsiveness, accessibility, and security.
 
 The application should leverage modern frontend technologies, advanced animations, real-time communication systems, and secure backend infrastructure to create a premium and highly interactive user experience.
 
-Additionally, the system must support secure payment processing, live delivery tracking, restaurant and admin dashboards, real-time notifications, and enterprise-level traffic scalability.
+Furthermore, the system must support secure payment processing, live delivery tracking, restaurant and admin dashboards, real-time notifications, and enterprise-level traffic scalability.
 
 ---
 
@@ -16,21 +16,27 @@ Additionally, the system must support secure payment processing, live delivery t
 
 Develop a complete full-stack enterprise food delivery platform that:
 
-- Implements smooth and immersive UI interactions using Framer Motion.
-- Provides a highly responsive and modern corporate ordering experience.
-- Supports restaurant discovery, meal customization, secure checkout, and real-time delivery tracking.
-- Enables office-specific delivery logistics and scheduling.
-- Uses real-time infrastructure for order updates and delivery status synchronization.
-- Handles secure authentication and payment processing.
-- Provides dedicated dashboards for users, restaurant partners, and administrators.
-- Maintains scalability during heavy traffic hours.
-- Ensures accessibility, SEO optimization, and production-level performance.
+- Implements UI interactions using Framer Motion.
+
+- Provides a modern ordering experience that is easy to use.
+
+- Supports finding restaurants, customizing meals, secure checkout and tracking deliveries in real-time.
+
+- Helps with delivery logistics and scheduling for offices.
+
+- Uses real-time updates for orders and delivery status.
+
+- Handles secure authentication and payment processing securely.
+
+- Offers dashboards, for users, restaurant partners and administrators to manage their accounts.
+
+- Maintains performance during busy hours.
+
+- Ensures website is accessible optimized for search engines and runs smoothly.
 
 ---
 
 # UI & Animation Requirements
-
-## Premium Landing Experience
 
 ### The landing page must include:
 
