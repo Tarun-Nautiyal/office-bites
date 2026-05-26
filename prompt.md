@@ -1,257 +1,475 @@
-<div align="center">
-
-# Enterprise Food Delivery Platform
-
-### For office professionals · Full-stack build spec
-
-**Role:** Full-Stack Developer · Scalable web apps · Modern UX
-
-</div>
-
----
-
-## Quick Navigation
-
-| Section | Topic |
-|:---|:---|
-| [Context](#context-and-role) | Mission & constraints |
-| [UX](#ui--ux-requirements) | React · Tailwind · Framer Motion |
-| [Frontend](#frontend-architecture) | Landing, animations, discovery, ordering |
-| [Checkout](#corporate-checkout--real-time-tracking) | Office logistics & tracking |
-| [Features](#important-features) | Dashboard, live tracking, sockets, notifications |
-| [Dashboards](#admin--restaurant-dashboard) | RBAC, partner & admin tools |
-| [Backend](#backend-architecture) | APIs, security, payments, database |
-| [Performance](#performance--scalability) | Peak traffic & optimization |
-| [DevOps](#devops--deployment) | Docker, CI/CD, env vars |
-| [Stack](#tech-stack) | Technology summary |
-| [Output](#expected-output) | Deliverables & final goal |
-
----
+# Enterprise Food Delivery Platform for Office Professionals
 
 ## Context and Role
 
-Build a **food delivery platform** for office employees during working hours.
+As a Full-Stack Developer specializing in scalable enterprise-grade web applications and immersive modern user experiences, you are responsible for designing and implementing a high-performance food delivery ecosystem tailored specifically for office employees and working professionals.
 
-| Requirement | Detail |
-|:---|:---|
-| **Audience** | Office employees & working professionals |
-| **Peak hours** | 12:00 PM – 2:30 PM (high concurrent load) |
-| **Experience** | Fast, responsive, animated, real-time, secure |
+The platform must deliver a seamless corporate food ordering experience during peak office hours while maintaining production-level scalability, responsiveness, accessibility, and security.
 
-**Core capabilities**
+The application should leverage modern frontend technologies, advanced animations, real-time communication systems, and secure backend infrastructure to create a premium and highly interactive user experience.
 
-- Restaurant browsing · Meal customization · Cart · Secure checkout
-- Office delivery scheduling · Real-time order tracking
-- High performance · Accessibility · Scalability
+Additionally, the system must support secure payment processing, live delivery tracking, restaurant and admin dashboards, real-time notifications, and enterprise-level traffic scalability.
 
 ---
 
-## UI & UX Requirements
+# Objective
 
-> Premium feel powered by **React**, **Tailwind CSS**, and **Framer Motion**
+Develop a complete full-stack enterprise food delivery platform that:
 
-| Quality | Target |
-|:---|:---|
-| Responsiveness | Highly responsive, mobile-first |
-| Interaction | Interactive, fluid micro-interactions |
-| Aesthetic | Modern, smooth, enterprise-grade |
-
----
-
-## Frontend Architecture
-
-### 1 · Landing Page
-
-- Hero section with strong visual hierarchy
-- Slider showcasing local restaurants / places
-- Featured corporate lunch menus
-- Social proof & reviews
-
-### 2 · Smooth Animations
-
-| Effect | Use case |
-|:---|:---|
-| Fade-in & scroll animations | Page and section reveals |
-| Hover on food cards | Discovery delight |
-| Skeleton loaders | Perceived performance |
-| Page transitions | Route changes |
-| Animated loading states | Async data |
-
-**Library:** Framer Motion
-
-### 3 · Easy Discovery
-
-Restaurant browse page:
-
-- Instant search · Debounced filtering
-- Filters: cuisine · rating · delivery time
-
-### 4 · Effortless Ordering
-
-**Menu**
-
-- Flying add-to-cart animation
-- Category menus · Sticky side nav
-- Smooth quantity updates · Promo codes
-
-**Meal customizer modal**
-
-- Sides · Extra toppings · Add/remove protein
-- Spice level · Special instructions
+- Implements smooth and immersive UI interactions using Framer Motion.
+- Provides a highly responsive and modern corporate ordering experience.
+- Supports restaurant discovery, meal customization, secure checkout, and real-time delivery tracking.
+- Enables office-specific delivery logistics and scheduling.
+- Uses real-time infrastructure for order updates and delivery status synchronization.
+- Handles secure authentication and payment processing.
+- Provides dedicated dashboards for users, restaurant partners, and administrators.
+- Maintains scalability during heavy traffic hours.
+- Ensures accessibility, SEO optimization, and production-level performance.
 
 ---
 
-## Corporate Checkout & Real-Time Tracking
+# UI & Animation Requirements
 
-Office delivery needs richer logistics than consumer apps.
+## Premium Landing Experience
 
-**Checkout fields (required)**
+### The landing page must include:
 
-| Field | Example |
-|:---|:---|
-| Office building name | `Tech Park Tower B` |
-| Floor | `4` |
-| Wing | `East` |
-| Desk / cubicle | `4E-127` |
-
----
-
-## Important Features
-
-### User Dashboard
-
-- Bookmark restaurants · Save office addresses
-- Edit profile · Order history · Active order tracking
-
-### Live Order Tracking
-
-Post-checkout → live tracking page.
-
-| Step | State |
-|:---:|:---|
-| 1 | Order accepted |
-| 2 | In kitchen |
-| 3 | On the way |
-| 4 | Reaching location |
-| 5 | Delivered |
-
-**UI:** Animated stepper · Real-time updates · Live ETA
-
-### Real-Time Infrastructure
-
-**Socket.IO** for order, driver, and kitchen updates — no manual refresh.
-
-### Notifications
-
-| Channel | Tool |
-|:---|:---|
-| Email | Nodemailer |
-| Push | Firebase Cloud Messaging (FCM) |
-
-**Example copy**
-
-> *"Your lunch order has been delivered to the reception of 4th floor."*
-
-**Triggers:** Order confirmed · Payment success · Prep started · Dispatched · Delivered
+- Outstanding animated hero section
+- Smooth scroll-based storytelling sections
+- Beautiful animated sliders showcasing:
+  - Local restaurants
+  - Corporate lunch menus
+  - Popular cuisines
+- Featured office meal combos
+- Social proof and testimonials section
+- Animated statistics and counters
+- Sticky navigation with smooth transitions
 
 ---
 
-## Admin & Restaurant Dashboard
+# Scroll-Based Storytelling & Motion Design
 
-**Access control:** Role-Based Access Control (RBAC)
+Implement immersive animations using Framer Motion.
 
-### Restaurant Partner Dashboard
+### Required animation behaviors:
 
-| Capability | |
-|:---|:---|
-| Real-time incoming orders | Accept / reject |
-| Status updates | Menu CRUD |
-
-### Admin Dashboard
-
-| Capability | |
-|:---|:---|
-| Manage restaurants & users | Track deliveries |
-| Platform analytics | Activity monitoring |
-
-**Analytics:** Daily revenue · Top restaurants · Active users · Delivery performance · Order volume
-
-**UI:** Graphs · Charts · Filters · Search
+- Scroll-triggered animations
+- Parallax effects
+- Fade-in transitions
+- Staggered animations
+- Animated section reveals
+- Smooth page transitions
+- Hover interactions on food cards
+- Animated loading states
+- Skeleton loaders
+- Animated add-to-cart interactions
+- Floating cart animations
+- Micro-interactions for buttons and filters
 
 ---
 
-## Backend Architecture
+# Animation Performance Requirements
 
-```mermaid
-flowchart LR
-    subgraph Client
-        A[React App]
-    end
-    subgraph API
-        B[Node + Express\nor Next.js API Routes]
-    end
-    subgraph Data
-        C[(MongoDB\nor PostgreSQL)]
-    end
-    subgraph Realtime
-        D[Socket.IO / WebSockets]
-    end
-    A --> B
-    B --> C
-    B --> D
-    A <--> D
-```
+Ensure animations:
 
-| Layer | Options |
-|:---|:---|
-| **API** | Node.js + Express **or** Next.js API Routes |
-| **Database** | MongoDB **or** PostgreSQL |
-
-**API responsibilities**
-
-- Authentication · Orders · Restaurants · Payments · Notifications · Real-time events
+- Use GPU-friendly properties:
+  - transform
+  - opacity
+- Avoid layout thrashing
+- Maintain smooth scroll performance
+- Do not block rendering
+- Support mobile devices efficiently
 
 ---
 
-## Security & Authentication
+# Layout Requirements
 
-> Non-negotiable — treat as baseline, not optional.
+The platform must include:
 
-| Area | Implementation |
-|:---|:---|
-| **Auth** | JWT · Password login · bcrypt hashing |
-| **Flows** | Register · Login · Logout · Forgot password |
-| **Middleware** | Sanitization · XSS · SQL injection protection |
-| **Hardening** | Rate limiting · Secure headers · Env protection |
-
-**Recommended packages:** `helmet` · `express-rate-limit` · `xss-clean` · `express-mongo-sanitize` · `dotenv`
-
----
-
-## Payment Integration
-
-**Gateways:** Stripe · Razorpay · PayPal
-
-| Feature | Required |
-|:---|:---|
-| Secure transactions | Yes |
-| Success / failure handling | Yes |
-| Webhooks | Yes |
-| Receipt generation | Yes |
+- Hero section with animated CTA
+- Restaurant showcase section
+- Featured lunch menus
+- Cuisine discovery section
+- Office ordering workflow section
+- User reviews/testimonials
+- Corporate offers section
+- Contact/support section
 
 ---
 
-## Database Requirements
+# Restaurant Discovery System
 
-Store entities for:
+The restaurant browsing experience must support:
 
-`Users` · `Restaurants` · `Menu items` · `Orders` · `Payments` · `Delivery status` · `Reviews` · `Ratings`
+- Instant search
+- Debounced filtering
+- Cuisine filtering
+- Rating filtering
+- Delivery-time filtering
+- Veg/non-veg filtering
+- Price-range filtering
+- Infinite scrolling
+- Lazy loading
 
 ---
 
-## API Response Structure
+# Restaurant Card Requirements
 
-**Success**
+Each restaurant card should include:
+
+- Animated hover effects
+- Delivery time
+- Ratings
+- Cuisine tags
+- Pricing information
+- Live availability status
+- Promotional offers
+- Favorite/bookmark functionality
+
+---
+
+# Ordering Experience
+
+## Menu Features
+
+Implement:
+
+- Category-based menu organization
+- Sticky category navigation
+- Animated add-to-cart flying effects
+- Smooth quantity updates
+- Dynamic pricing updates
+- Promo code input section
+- Cart persistence
+- Real-time cart synchronization
+
+---
+
+# Meal Customization Modal
+
+Create an animated customization modal that allows users to:
+
+- Change sides
+- Add/remove toppings
+- Add/remove meat
+- Select spice level
+- Add special instructions
+- Choose portion size
+- View dynamic price calculation
+
+### Modal Requirements
+
+- Smooth modal entrance/exit animations
+- Keyboard accessibility
+- Focus trapping
+- Responsive behavior
+- Proper ARIA support
+
+---
+
+# Corporate Checkout System
+
+Unlike regular delivery apps, office delivery requires enterprise-grade logistics handling.
+
+## Checkout Form Must Include
+
+- Office Building Name
+- Company Name
+- Floor Number
+- Wing/Department
+- Desk/Cubicle Number
+- Delivery Instructions
+- Preferred Delivery Time
+- Contact Number
+
+---
+
+# Authentication System
+
+Implement a complete authentication system using JWT-based authentication.
+
+## Required Features
+
+- User registration
+- Login
+- Logout
+- Forgot password
+- Password reset
+- Refresh tokens
+- Secure session handling
+- Protected routes
+- Role-based access control (RBAC)
+
+---
+
+# Security Requirements (Non-Negotiable)
+
+## Password Security
+
+Use:
+
+- bcrypt password hashing
+- JWT authentication
+- HTTP-only cookies
+- Secure token storage
+
+---
+
+# Security Middleware
+
+Implement:
+
+- helmet
+- express-rate-limit
+- xss-clean
+- express-mongo-sanitize
+- dotenv
+
+---
+
+# Data Protection Requirements
+
+Protect against:
+
+- XSS attacks
+- Injection attacks
+- CSRF attacks
+- Rate-limit abuse
+- Unauthorized access
+- Sensitive credential exposure
+
+---
+
+# User Dashboard
+
+Users must be able to:
+
+- Manage profiles
+- Save office addresses
+- Bookmark favorite restaurants
+- Track active orders
+- View order history
+- Manage payment methods
+- Save delivery preferences
+- View invoices and receipts
+
+---
+
+# Live Order Tracking System
+
+After checkout, redirect users to a live tracking interface.
+
+## Tracking States
+
+1. Order Accepted
+2. Preparing Food
+3. In Kitchen Queue
+4. Driver Assigned
+5. On The Way
+6. Reaching Office Location
+7. Delivered
+
+---
+
+# Tracking UI Requirements
+
+Implement:
+
+- Animated stepper/timeline
+- Real-time updates
+- Live ETA updates
+- Driver status updates
+- Delivery progress animations
+- Interactive tracking map (optional)
+
+---
+
+# Real-Time Infrastructure
+
+Use:
+
+- Socket.IO
+OR
+- WebSockets
+
+---
+
+# Real-Time Features
+
+Support:
+
+- Live order tracking
+- Real-time order status updates
+- Driver location updates
+- Kitchen updates
+- Restaurant acceptance updates
+- Real-time notifications
+- Cart synchronization
+
+No manual refresh should be required.
+
+---
+
+# Notification System
+
+Integrate:
+
+- Nodemailer
+- Firebase Cloud Messaging (FCM)
+
+---
+
+# Notification Triggers
+
+Send notifications for:
+
+- Order confirmation
+- Payment success
+- Restaurant acceptance
+- Food preparation started
+- Driver assigned
+- Delivery dispatched
+- Order delivered
+
+### Example Notification
+
+> "Your lunch order has been delivered to the reception desk on the 4th floor."
+
+---
+
+# Restaurant Partner Dashboard
+
+Restaurant partners must be able to:
+
+- View incoming orders in real-time
+- Accept/reject orders
+- Update order statuses
+- Manage menus
+- Perform CRUD operations
+- Configure delivery timings
+- Manage inventory availability
+- Monitor sales analytics
+
+---
+
+# Admin Dashboard
+
+Admins should be able to:
+
+- Manage restaurants
+- Manage users
+- Track deliveries
+- Monitor platform activity
+- View enterprise analytics
+- Manage disputes/refunds
+- Configure promotional campaigns
+
+---
+
+# Analytics Requirements
+
+Include:
+
+- Daily revenue
+- Order volume
+- Active users
+- Delivery performance
+- Top-performing restaurants
+- Peak-hour analytics
+- Conversion metrics
+
+---
+
+# Dashboard UI Requirements
+
+Include:
+
+- Interactive charts
+- Graphs
+- Tables
+- Advanced filtering
+- Search functionality
+- Export functionality
+- Responsive admin layouts
+
+---
+
+# Backend Architecture
+
+Build scalable backend APIs using:
+
+- Node.js + Express
+OR
+- Next.js API Routes
+
+---
+
+# Database Requirements
+
+Use:
+
+- MongoDB
+OR
+- PostgreSQL
+
+---
+
+# Database Must Store
+
+- Users
+- Restaurants
+- Menu items
+- Orders
+- Payments
+- Delivery tracking data
+- Reviews
+- Ratings
+- Notifications
+- Saved addresses
+
+---
+
+# Payment Integration
+
+Integrate:
+
+- Stripe
+- Razorpay
+- PayPal
+
+---
+
+# Payment Features
+
+Implement:
+
+- Secure transactions
+- Payment success handling
+- Payment failure handling
+- Webhooks
+- Invoice generation
+- Receipt generation
+- Refund workflows
+
+---
+
+# API Requirements
+
+Backend APIs must:
+
+- Handle authentication
+- Manage restaurants
+- Process orders
+- Handle secure payments
+- Send notifications
+- Manage dashboards
+- Support real-time updates
+
+---
+
+# API Response Structure
+
+## Success Response
 
 ```json
 {
@@ -260,104 +478,3 @@ Store entities for:
   "message": "Order fetched successfully",
   "data": {}
 }
-```
-
-**Error**
-
-```json
-{
-  "success": false,
-  "status": 400,
-  "error": {
-    "code": "VALIDATION_ERROR",
-    "message": "Invalid request data",
-    "details": []
-  }
-}
-```
-
----
-
-## Performance & Scalability
-
-**Peak window:** 12:00 PM – 2:30 PM · High concurrent traffic · Horizontal scaling
-
-**Optimization checklist**
-
-- [ ] Code splitting & lazy loading
-- [ ] Image optimization & compression
-- [ ] Pagination & infinite scroll
-- [ ] Debounced search
-- [ ] Caching strategies
-- [ ] Bundle size · API latency · DB queries · CDN images
-
----
-
-## Responsive Design & Accessibility
-
-| Area | Requirement |
-|:---|:---|
-| Layout | Fully responsive · Mobile-first |
-| SEO | Optimized metadata & structure |
-| a11y | Semantic HTML · ARIA · Keyboard nav · Contrast |
-
----
-
-## DevOps & Deployment
-
-| Topic | Tooling |
-|:---|:---|
-| **Containers** | Docker |
-| **CI/CD** | Vercel · AWS |
-| **Pipeline** | Production builds · Env config · Automated deploy · Tests |
-
-**Environment variables (never expose on frontend)**
-
-- API keys · Database URLs · JWT secrets · Stripe secrets · Firebase credentials
-
----
-
-## Tech Stack
-
-| Layer | Technologies |
-|:---|:---|
-| **Frontend** | React.js · Framer Motion · Tailwind CSS · Redux or Zustand |
-| **Backend** | Node.js · Express.js · JWT · Socket.IO |
-| **Database** | MongoDB or PostgreSQL |
-| **Payments** | Stripe · Razorpay · PayPal |
-| **Notifications** | Nodemailer · Firebase Cloud Messaging |
-| **Deploy** | Vercel · AWS · Docker |
-
----
-
-## Expected Output
-
-### User experience
-
-Smooth ordering · Real-time tracking · Responsive UI · Modern animations
-
-### Authentication
-
-Full auth system · Secure sessions · Password recovery
-
-### Payments
-
-Secure checkout · Gateway integration · Receipts
-
-### Admin
-
-Restaurant & user management · Analytics · Delivery monitoring
-
-### Infrastructure
-
-Scalable backend · Real-time layer · Deployment-ready · CI/CD enabled
-
----
-
-<div align="center">
-
-## Final Goal
-
-**Production-grade, scalable, secure, and highly interactive** corporate food delivery — optimized for office professionals and enterprise traffic.
-
-</div>
