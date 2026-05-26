@@ -68,18 +68,3 @@ Likert rating: 5 / 7 (slight but clear edge for GPT)
 | **Gemini** | **4 / 5** | Adds creative branding, animated UX, real-time order rooms, and office-focused delivery flow. Still largely based on conventional MERN architecture patterns. |
 
 ---
-
-# Overall Comparison Summary
-
-| Category | GPT | Gemini |
-|---|---|---|
-| Correctness | 4.5 | 4 |
-| Relevance | 5 | 5 |
-| Completeness | 3.8 | 4 |
-| Style & Presentation | 5 | 5 |
-| Coherence | 4.8 | 5 |
-| Helpfulness | 4.2 | 5 |
-| Creativity | 3.5 | 4 |
-
----
-
