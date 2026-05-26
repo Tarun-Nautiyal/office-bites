@@ -2,14 +2,13 @@
 
 ## Context and Role
 
-As a Full-Stack Developer specializing in scalable enterprise level web applications and immersive modern user experiences, you are responsible for designing and implementing a high-performance food delivery ecosystem tailored specifically for office employees and working professionals.
+You are a Full-Stack Developer who makes company websites and apps that people love to use. Your job is to make a food delivery system for people who work in offices. This system has to be very good at handling a lot of orders when everyone's at work.
 
-The platform must deliver a seamless corporate food ordering experience during peak office hours while maintaining production-level scalability, responsiveness, accessibility, and security.
+The food delivery system has to be easy to use when a lot of people are ordering food at the time. It also has to be fast and work well on all devices. The food delivery system has to be very secure so people do not have to worry about their information.
 
-The application should leverage modern frontend technologies, advanced animations, real-time communication systems, and secure backend infrastructure to create a premium and highly interactive user experience.
+You will use frontend technologies, like animations that make the app fun to use and real-time communication systems to make the food delivery system very interactive. The backend infrastructure has to be secure so everything works correctly.
 
-Furthermore, the system must support secure payment processing, live delivery tracking, restaurant and admin dashboards, real-time notifications, and enterprise-level traffic scalability.
-
+The food delivery system also has to be able to handle payments so people can pay for their food without worrying. It has to be able to track deliveries in time so people know when their food is coming. The food delivery system has to have dashboards for restaurants and admins so they can see what is going on. It also has to be able to send notifications in time so people get updates, about their food. The food delivery system has to be able to handle a lot of traffic like a company website.
 ---
 
 # Objective
@@ -108,13 +107,11 @@ The platform must include:
 The restaurant browsing experience must support:
 
 - Instant search
-- Debounced filtering
 - Cuisine filtering
-- Rating filtering
-- Delivery-time filtering
-- Veg/non-veg filtering
-- Price-range filtering
-- Infinite scrolling
+- Rating filtering , filtering restaurants on the basis of their rating
+- Delivery-time filtering , filtering food items 
+- Veg/non-veg filtering 
+- Price-range filtering , filtering food items based on price
 - Lazy loading
 
 ---
@@ -225,7 +222,6 @@ Use:
 
 Implement:
 
-- helmet
 - express-rate-limit
 - xss-clean
 - express-mongo-sanitize
@@ -250,7 +246,7 @@ Protect against:
 
 Users must be able to:
 
-- Manage profiles
+- Manage profiles 
 - Save office addresses
 - Bookmark favorite restaurants
 - Track active orders
@@ -267,8 +263,8 @@ After checkout, redirect users to a live tracking interface.
 
 ## Tracking States
 
-1. Order Accepted
-2. Preparing Food
+1. Order Accepted by the employee and the food outlet 
+2. Preparing Food 
 3. In Kitchen Queue
 4. Driver Assigned
 5. On The Way
@@ -281,12 +277,11 @@ After checkout, redirect users to a live tracking interface.
 
 Implement:
 
-- Animated stepper/timeline
+- Animated timeline
 - Real-time updates
 - Live ETA updates
 - Driver status updates
 - Delivery progress animations
-- Interactive tracking map (optional)
 
 ---
 
@@ -304,15 +299,14 @@ OR
 
 Support:
 
-- Live order tracking
-- Real-time order status updates
-- Driver location updates
-- Kitchen updates
-- Restaurant acceptance updates
-- Real-time notifications
-- Cart synchronization
+- Live order tracking by customers
+- Real-time order status updates to customers
+- Driver location updates using google APis
+- Kitchen updates by the restaurants 
+- Restaurant acceptance updates 
+- Real-time notifications 
+- Cart items 
 
-No manual refresh should be required.
 
 ---
 
@@ -354,8 +348,6 @@ Restaurant partners must be able to:
 - Perform CRUD operations
 - Configure delivery timings
 - Manage inventory availability
-- Monitor sales analytics
-
 ---
 
 # Admin Dashboard
@@ -365,10 +357,8 @@ Admins should be able to:
 - Manage restaurants
 - Manage users
 - Track deliveries
-- Monitor platform activity
-- View enterprise analytics
-- Manage disputes/refunds
-- Configure promotional campaigns
+- Manage refunds
+- Add promotional campaigns 
 
 ---
 
@@ -394,9 +384,8 @@ Include:
 - Graphs
 - Tables
 - Advanced filtering
-- Search functionality
-- Export functionality
-- Responsive admin layouts
+- Search functionality help to find nearby resturants
+- Responsive admin layouts add or subtract food items and restaurants
 
 ---
 
@@ -405,8 +394,7 @@ Include:
 Build scalable backend APIs using:
 
 - Node.js + Express
-OR
-- Next.js API Routes
+
 
 ---
 
@@ -415,8 +403,6 @@ OR
 Use:
 
 - MongoDB
-OR
-- PostgreSQL
 
 ---
 
